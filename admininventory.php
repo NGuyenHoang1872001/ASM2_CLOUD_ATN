@@ -23,7 +23,7 @@
                                             <th>OfficeID</th>
                                             <th>Quantity</th>
                                             <th>ProductID</th>
-                                            <th>More</th>
+
                                             
                                         </tr>
                                     </thead>

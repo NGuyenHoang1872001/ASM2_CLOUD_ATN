@@ -21,7 +21,7 @@
                         <th>ProductID</th>
                         <th>BillID</th>
                         <th>Quantity</th>
-                        <th>More</th>
+
                         
                     </tr>
                 </thead>
