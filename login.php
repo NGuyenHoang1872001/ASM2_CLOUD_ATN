@@ -22,11 +22,11 @@
                 echo '<script>window.location.href = "product.php";</script>';               
                 exit();
             }
-            if(!$rowcount2 == 0){
-                echo 'Email or Password are incorrect !';
-                echo '<script>window.location.href = "admin.php";</script>';               
-                exit();
-            }
+            // if(!$rowcount2 == 0){
+            //     echo 'Email or Password are incorrect !';
+            //     echo '<script>window.location.href = "admin.php";</script>';               
+            //     exit();
+            // }
             // var_dump($employee);
             echo '<script>window.location.href = "login.php";</script>';
             exit();
