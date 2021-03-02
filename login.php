@@ -3,20 +3,20 @@
 <?php
     $email = "";
 	$password = "";
-    $adminemail ="";
-	$adminpassword =""
+    // $adminemail ="";
+	// $adminpassword =""
 
 	if (isset($_POST['save'])) {
         //header("Location: http://localhost/ASM2-Cloud/product.php"); 
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-        $adminemail = $_POST['adminemail'];
-        $adminpassword = $_POST['adminpassword'];
+        // $adminemail = $_POST['adminemail'];
+        // $adminpassword = $_POST['adminpassword'];
         try {
             $employee = pg_query($conn, "SELECT * FROM employee WHERE Email = '$email' AND Password = '$password'  ");
             $rowcount = pg_num_rows($employee);
-            $admin = pg_query($conn, "SELLECT * FROM admin WHERE adminemail = '$adminemail' AND adminpassword = '$adminpassword'  ");
-            $rowcount2 = pg_num_rows($admin);
+            // $admin = pg_query($conn, "SELLECT * FROM admin WHERE adminemail = '$adminemail' AND adminpassword = '$adminpassword'  ");
+            // $rowcount2 = pg_num_rows($admin);
             if(!$rowcount == 0) {
                 echo 'Email or Password are incorrect !';
                 echo '<script>window.location.href = "product.php";</script>';               
