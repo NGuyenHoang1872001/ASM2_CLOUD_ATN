@@ -1,22 +1,18 @@
 <?php  include('admin/header2.php'); ?>
 <?php  include('database.php'); ?>
-<?php 
-    $products = pg_query($conn, "SELECT * FROM product");
-    // $row = pg_fetch_row($products);
-    // var_dump($row);
-    // die()
-    ?>
+<?php $inventorys = pg_query($conn, "SELECT * FROM inventory"); ?>
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Products Table</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Inventory Table</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="createProduct.php" class="btn btn-success active" role="button" aria-pressed="true">Create Product</a>
+                            <a href="addinventory.php" class="btn btn-success active" role="button" aria-pressed="true">Add Inventory</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -24,22 +20,23 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Quantity in Stock</th>
-                                            <th>Name</th>
-                                            <th>Price</th>
-
+                                            <th>OfficeID</th>
+                                            <th>Quantity</th>
+                                            <th>ProductID</th>
+                                            <th>More</th>
+                                            
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
-                                    <?php while ($row = pg_fetch_row($products)) {?>
+                                    <?php while ($row = pg_fetch_row($inventorys)) { ?>
                                         <tr>
                                             <td><?php echo $row['0']; ?></td>
                                             <td><?php echo $row['1']; ?></td>
                                             <td><?php echo $row['2']; ?></td>
                                             <td><?php echo $row['3']; ?></td>
                                         </tr>
-                                    <?php }?>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -51,5 +48,4 @@
 
             </div>
             <!-- End of Main Content -->
-
-<?php  include('template/footer.php'); ?>           
+<?php  include('template/footer.php'); ?> 

@@ -36,7 +36,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ATN Admin</div>
+                <div class="sidebar-brand-text mx-3">ATN</div>
             </a>
 
             <!-- Divider -->
