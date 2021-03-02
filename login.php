@@ -3,22 +3,32 @@
 <?php
     $email = "";
 	$password = "";
+    // $adminemail ="";
+	// $adminpassword =""
+
 	if (isset($_POST['save'])) {
         //header("Location: http://localhost/ASM2-Cloud/product.php"); 
 		$email = $_POST['email'];
 		$password = $_POST['password'];
-
+        // $adminemail = $_POST['adminemail'];
+        // $adminpassword = $_POST['adminpassword'];
         try {
-            $employee = pg_query($conn, "SELECT * FROM employee  WHERE Email = '$email' AND Password = '$password'  ");
+            $employee = pg_query($conn, "SELECT * FROM employee WHERE Email = '$email' AND Password = '$password'  ");
             $rowcount = pg_num_rows($employee);
-            if(!$rowcount = 0) {
-                // echo 'Email or Password are incorrect !';
-                echo '<script>window.location.href = "product.php";</script>';               
+            // $admin = pg_query($conn, "SELLECT * FROM admin WHERE adminemail = '$adminemail' AND adminpassword = '$adminpassword'  ");
+            // $rowcount2 = pg_num_rows($admin);
+            if($rowcount == 0) {
+                echo 'Email or Password are incorrect !';
+                echo '<script>window.location.href = "login.php";</script>';               
                 exit();
             }
-            }else
+            // if(!$rowcount2 == 0){
+            //     echo 'Email or Password are incorrect !';
+            //     echo '<script>window.location.href = "admin.php";</script>';               
+            //     exit();
+            // }
             // var_dump($employee);
-            echo '<script>window.location.href = "login.php";</script>';
+            echo '<script>window.location.href = "product.php";</script>';
             exit();
 		    
         } catch (Exception $e) {
