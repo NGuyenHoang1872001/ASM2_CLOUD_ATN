@@ -48,4 +48,4 @@
 
             </div>
             <!-- End of Main Content -->
-<?php  include('template/footer.php'); ?> 
+<?php  include('admin/footer2.php'); ?> 
